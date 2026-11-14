@@ -1,0 +1,17 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Bó Hoa Linh Lan",
+      "price": 1200000,
+      "image": "linhlan.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Bó Hoa Hướng Dương",
+      "price": 480000,
+      "image": "huongduong.jpg"
+    }
+  ],
+  "orders": []
+}
