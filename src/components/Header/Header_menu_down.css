@@ -1,0 +1,52 @@
+
+/* Header bao ngoài */
+.header {
+  display: flex;
+  height: 100vh; /* toàn bộ chiều cao màn hình */
+}
+
+/* Menu dọc bên trái */
+.menu {
+  width: 220px;
+  background-color: #fff;
+  padding-top: 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Danh sách menu */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* xếp dọc */
+  gap: 16px;
+}
+
+.menu li {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 20px;
+  color: #333;
+}
+
+.menu li:hover {
+  background-color: #f2f2f2;
+  color: #ff6600;
+}
+
+/* Logo sang phải */
+.logo {
+  flex: 1; /* chiếm phần còn lại */
+  display: flex;
+  justify-content: center; /* căn giữa theo ngang */
+  align-items: center;     /* căn giữa theo dọc */
+  background-color: #f9f9f9;
+}
+
+.logo img {
+  max-width: 180px; /* hoặc tuỳ kích thước logo */
+  height: auto;
+}

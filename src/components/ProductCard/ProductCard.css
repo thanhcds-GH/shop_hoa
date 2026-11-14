@@ -1,0 +1,176 @@
+/* src/components/ProductCard/ProductCard.css */
+
+.product-card {
+  background: #fff;
+  border-radius: 12px; /* Bo góc mượt hơn */
+  padding: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0f0f0; /* Viền xám rất nhạt mặc định để định hình thẻ */
+  position: relative;
+  text-align: center; /* Căn giữa toàn bộ nội dung */
+}
+
+/* Hiệu ứng khi Hover giống hình mẫu */
+.product-card:hover {
+  border-color: var(--c-soft);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Khung ảnh làm mốc cho các nút nổi */
+.product-image {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.product-image img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Trong hình mẫu ảnh hơi chữ nhật ngang, nhìn sẽ thoáng hơn vuông */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Nút xem / thêm giỏ nổi trên ảnh, hiện khi rê chuột */
+.hover-actions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.product-card:hover .hover-actions,
+.hover-actions:focus-within {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Máy cảm ứng không có hover: luôn hiện nút */
+@media (hover: none) {
+  .hover-actions {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  color: var(--c-primary);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+.product-info {
+  flex-grow: 1; /* Giúp các phần info đẩy nút bấm xuống đáy thẻ đều nhau */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+  color: var(--c-text);
+  font-weight: 500;
+  /* Giới hạn tên hoa trong 2 dòng để không làm lệch các thẻ */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.8em; /* giữ chỗ 2 dòng để các thẻ thẳng hàng */
+}
+
+.price {
+  color: var(--c-primary);
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 12px;
+}
+
+/* Đẩy giá + nút xuống đáy thẻ, không để khoảng trống giữa tên và giá */
+.product-info .price {
+  margin-top: auto;
+}
+
+/* Nút MUA NGAY quan trọng nhất để giống hình mẫu */
+.buy-btn {
+  background-color: #ff8fc0;
+  background-image: linear-gradient(135deg, #ffb6c1, #ff69b4); /* hồng gốc */
+  color: #6b0f3a; /* Đỏ mận đậm: cùng họ màu với nền hồng nhưng đủ đậm để đọc rõ */
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45); /* Viền sáng mảnh phía dưới cho chữ nổi như khắc */
+  border: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+  /* Cạnh dưới đậm tạo độ dày cho nút */
+  box-shadow: 0 3px 0 #e0559c;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Rê chuột: nút nổi lên, sáng hơn, lộ cạnh dày hơn và có bóng đổ */
+.buy-btn:hover {
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
+    linear-gradient(135deg, #ffc4d0, #ff78bb);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 0 #e0559c, 0 10px 16px rgba(255, 105, 180, 0.4);
+}
+
+/* Bấm: nút lún xuống */
+.buy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #e0559c, 0 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buy-btn,
+  .buy-btn:hover,
+  .buy-btn:active {
+    transition: none;
+    transform: none;
+  }
+}
+/* Tên sản phẩm là link sang trang chi tiết nhưng giữ kiểu chữ của thẻ */
+.product-link {
+  color: inherit;
+  text-decoration: none;
+}
+.product-link:hover {
+  text-decoration: underline;
+}
+
+/* Chữ xanh lục bảo đậm cho tên và giá: rõ trên nền trắng, gợi màu lá bên tông hồng của shop */
+.product-card h3,
+.product-card .price {
+  color: #0f5132;
+}
+.product-card h3 {
+  font-weight: 600;
+}

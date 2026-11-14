@@ -1,0 +1,91 @@
+/* Tên class riêng cho trang chi tiết để không đè lên .product-image / .product-info của thẻ sản phẩm */
+.product-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.product-detail-content {
+  display: flex;
+  flex-wrap: wrap; /* Màn hình hẹp: ảnh nằm trên, thông tin nằm dưới */
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.product-detail-image {
+  flex: 1 1 320px;
+  max-width: 450px;
+}
+
+.product-detail-image img {
+  width: 100%;
+  aspect-ratio: 9 / 10;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.product-detail-info {
+  flex: 1 1 300px;
+}
+
+.product-detail-info h1 {
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.product-category {
+  color: #888;
+  margin: 0 0 10px;
+}
+
+.product-price {
+  font-size: 28px;
+  color: #ff4081;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--c-primary-dark);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-add-detail {
+  padding: 15px 30px;
+  /* Cùng dải hồng nhạt với nút Mua ngay trên thẻ: nền hồng đậm cũ làm chữ xanh khó đọc */
+  background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+  color: #0f5132; /* Xanh lục bảo đậm, trùng màu tên và giá trên thẻ sản phẩm */
+  font-weight: 600;
+  border: 2px solid #ff69b4;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-add-detail:hover {
+  filter: brightness(1.06);
+  transform: scale(1.05);
+}
+
+.btn-add-detail.btn-outline {
+  background: #fff;
+}
+
+.btn-add-detail.btn-outline:hover {
+  background: #fff0f5;
+  filter: none;
+}

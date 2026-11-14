@@ -1,0 +1,60 @@
+.hero {
+  height: 320px;
+  width: 100%;
+  background-image: url("../../assets/Banner_hoa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Lớp phủ làm ảnh chìm */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* Text + button */
+.hero-overlay {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-overlay p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+/* Button */
+.hero-btn {
+  padding: 14px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #ee4d2d;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hero-btn:hover {
+  background-color: #d63f23;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,32 @@
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  padding: 20px 5%;
+  justify-content: flex-start; /* Căn lề trái giống hình mẫu */
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 18px;
+  border-radius: 20px; /* Bo tròn hoàn toàn hai đầu */
+  border: 1px solid var(--c-soft); /* Viền hồng nhạt */
+  background-color: white;
+  color: var(--c-primary); /* Chữ màu hồng đậm */
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #fff0f5; /* Màu hồng cực nhạt khi di chuột */
+}
+
+/* Style cho nút đang được chọn */
+.filter-btn.active {
+  background-color: var(--c-primary); /* Nền hồng đậm */
+  color: white; /* Chữ trắng */
+  border-color: var(--c-primary);
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+}

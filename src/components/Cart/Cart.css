@@ -1,0 +1,176 @@
+/* 1. Thu hẹp độ rộng tổng thể của mỗi dòng sản phẩm */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    
+    /* CHÌA KHÓA: Giới hạn chiều rộng thẻ chỉ khoảng 600px - 700px */
+    max-width: 650px; 
+    width: 100%;
+}
+
+/* 2. Cấu trúc lại khối nội dung để các thành phần sát nhau */
+.cart-item-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ép tất cả về bên trái */
+    flex: 1;
+}
+.checkout-btn{
+    color: #ff0000;
+}
+/* 3. Khống chế chiều rộng phần thông tin chữ */
+.cart-item-details {
+    /* Thu hẹp khoảng cách này sẽ kéo giá tiền lại gần hơn nữa */
+    width: 220px; 
+    margin-right: 30px; 
+}
+
+.cart-item-details h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.cart-item-details .price, 
+.cart-item-details .quantity {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 4. Phần thành tiền giờ sẽ nằm ngay sát bên cạnh */
+.cart-item-subtotal {
+    font-weight: bold;
+    color: #d63384;
+    font-size: 1.1rem;
+    min-width: 100px;
+}
+
+/* 5. Ảnh sản phẩm thu nhỏ lại một chút cho cân đối */
+.cart-item-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+
+/* Đảm bảo phần tổng tiền bên dưới cũng thu hẹp theo */
+/* src/components/Cart/Cart.css */
+.cart-summary {
+    max-width: 650px;       /* Khớp với độ rộng của các dòng sản phẩm */
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+
+    /* Dùng Flexbox để đẩy tất cả nội dung bên trong về bên phải */
+    display: flex;
+    flex-direction: column; /* Xếp chồng Tổng cộng lên trên Nút */
+    align-items: flex-end;  /* Đẩy cả cụm về góc phải */
+}
+.cart-summary h3 span {
+    color: #ff0000; 
+    font-size: 1.6rem;
+    font-weight: bold;
+}.checkout-btn {
+    background-color: #f8f9fa; /* Đổi sang nền sáng để chữ ĐỎ nổi bật hơn */
+    color: #ff0000;            /* Chữ màu đỏ theo ý chị */
+    border: 1px solid #ff0000; /* Thêm viền đỏ cho đồng bộ */
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkout-btn:hover {
+    background-color: #ffeaea; /* Hiệu ứng khi di chuột vào */
+}
+.cart-item {
+    display: flex;
+    align-items: center; /* Đổi lại thành center để đẹp hơn flex-end */
+    max-width: 650px;
+    /* các code khác giữ nguyên... */
+}
+.cart-link-wrapper {
+    cursor: pointer;
+    display: inline-block; /* Đảm bảo vùng nhấn bao sát icon */
+}
+
+.cart-icon-container:hover .main-cart-icon {
+    color: #d63384; /* Hiệu ứng đổi màu nhẹ khi di chuột vào - tùy chọn */
+    transition: 0.3s;
+}
+
+/* Màn hình xác nhận đặt hàng thành công */
+.order-success {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 60px 20px;
+    text-align: center;
+}
+.order-success-icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+.order-success h2 {
+    margin: 20px 0 12px;
+    font-size: 1.8rem;
+    color: #1f2937;
+}
+.order-success-meta {
+    color: #6b7280;
+}
+.order-success-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 32px;
+    border-radius: 999px;
+    background: linear-gradient(120deg, #8a6d1f, #e3cb6c, #8a6d1f);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(138, 109, 31, 0.35);
+}
+.order-success-btn:hover {
+    filter: brightness(1.08);
+}
+
+/* Nút tăng / giảm / xóa trong giỏ hàng */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+.quantity-controls button {
+    min-width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.quantity-controls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.quantity-controls span {
+    min-width: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+.quantity-controls .remove-btn {
+    margin-left: 8px;
+    padding: 0 10px;
+    border-color: #ff0000;
+    color: #ff0000;
+    font-size: 0.85rem;
+}

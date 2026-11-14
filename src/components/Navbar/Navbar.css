@@ -1,0 +1,21 @@
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 15px 40px;
+  margin: 0;
+}
+
+.menu li {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menu li:hover {
+  color: #e85a4f;
+}

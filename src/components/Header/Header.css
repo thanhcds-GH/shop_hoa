@@ -1,0 +1,153 @@
+/* src/components/Header/Header.css */
+
+/* --- TỔNG THỂ HEADER --- */
+.main-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 1. PHẦN BANNER --- */
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 200px !important; /* Chiều cao cố định theo yêu cầu */
+    overflow: hidden;
+    display: block !important;
+}
+
+.banner-img {
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+    object-fit: cover; /* Lấp đầy khung 200px */
+    object-position: top !important; /* LẤY PHẦN ĐỈNH ĐỂ HIỆN CHỮ QUY NHƠN */
+}
+
+/* Các thành phần nổi trên banner (Logo shop, Giỏ hàng) */
+.banner-top-controls {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 10;
+}
+
+.shop-branding {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.shop-name {
+    font-family: var(--f-heading);
+    font-weight: 700;
+    color: var(--c-primary);
+}
+
+/* Nền tròn trắng để icon giỏ hàng không chìm vào ảnh hoa */
+.cart-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-wrapper .main-cart-icon {
+    font-size: 20px;
+    color: var(--c-primary);
+}
+
+/* --- 2. THANH MENU (Sửa lỗi dàn hàng ngang) --- */
+.nav-menu-bar {
+    background-color: var(--c-primary);
+    padding: 12px 0;
+    width: 100%;
+    display: block !important;
+}
+
+.main-menu {
+    display: flex !important;       /* ÉP DÀN HÀNG NGANG */
+    justify-content: center;      /* Căn giữa menu */
+    align-items: center;
+    list-style: none !important;  /* XÓA DẤU CHẤM ĐẦU DÒNG */
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 35px;                    /* Khoảng cách giữa các mục */
+}
+
+.main-menu li {
+    display: flex !important;
+    margin: 0 !important;
+}
+
+.menu-item {
+    color: white !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+}
+
+.menu-item:hover {
+    color: #e6ff4d !important; /* vàng chanh */
+}
+
+/* Mục đang ở (NavLink tự gắn class "active") */
+.menu-item.active {
+    border-bottom-color: var(--c-gold);
+}
+
+@media (max-width: 600px) {
+    .main-menu {
+        flex-wrap: wrap;
+        gap: 10px 18px;
+    }
+    .menu-item {
+        font-size: 12px;
+    }
+    .banner-top-controls {
+        padding: 0 12px;
+    }
+}
+
+/* Icon ngôi nhà (Home) */
+.menu-item svg {
+    font-size: 18px;
+}
+/* Màn hình hẹp: tên shop và giỏ hàng lên một hàng riêng, ảnh banner hiện trọn để không bị che hay cắt chữ */
+@media (max-width: 900px) {
+    .banner-section {
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column;
+    }
+    .banner-img {
+        height: auto !important;
+        max-height: 200px; /* Màn hình cỡ vừa: cắt phần đáy ảnh như bản máy tính, chữ ở phần đỉnh vẫn đủ */
+    }
+    .banner-top-controls {
+        position: static;
+        order: -1; /* Nằm trên ảnh dù đứng sau ảnh trong HTML */
+        align-items: center;
+        padding: 8px 12px;
+    }
+}

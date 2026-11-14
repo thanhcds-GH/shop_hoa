@@ -1,0 +1,111 @@
+/* ===== Global layout fix ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ===== Theme ===== */
+:root {
+  --c-primary: #ff69b4;      /* hồng gốc: menu, giá, nút */
+  --c-primary-dark: #e0559c;
+  --c-soft: #ffb6c1;         /* hồng phấn */
+  --c-bg: #ffffff;
+  --c-text: #333333;
+  --c-gold: #fff8dc;
+  --f-heading: 'Playfair Display', Georgia, serif;
+  --f-body: 'Be Vietnam Pro', 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--f-body);
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+.app-container {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+.app-title {
+  color: #d63384;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.app-subtitle {
+  color: #63c4d1;
+  font-size: 26px;
+}
+/* Style cho các nút bấm lọc */
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--c-primary);
+  background: white;
+  color: var(--c-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background: var(--c-primary);
+  color: white;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+}
+/* Thu hẹp khoảng cách line và FilterBar */
+.divider {
+  margin: 0;            /* bỏ khoảng cách trên/dưới của line */
+  border: none;         /* tuỳ chọn: bỏ border mặc định */
+  border-top: 1px solid var(--c-primary); /* tuỳ chọn: line màu hồng */
+}
+
+.filter-bar {
+  margin-top: 0;        /* bỏ khoảng cách thừa phía trên FilterBar */
+  margin-bottom: 15px;  /* tuỳ chọn: khoảng cách dưới FilterBar */
+}
+/* Điều chỉnh khoảng cách line và FilterBar */
+.divider {
+  margin: 0; /* line sát phía dưới */
+  border: none;
+  border-top: 1px solid var(--c-primary); /* line màu hồng */
+}
+
+/* Điều chỉnh khoảng cách giữa FilterBar và Shape */
+.filter-bar {
+  margin-top: 0;        /* bỏ khoảng cách thừa phía trên FilterBar */
+  margin-bottom: 5px;   /* thu hẹp khoảng cách với shape bên dưới */
+}
+
+/* Nếu muốn kiểm soát trực tiếp shape "Sản phẩm nổi bật" */
+.section-shape {
+  margin-top: 5px;      /* thu hẹp khoảng cách với FilterBar */
+}
+
+/* Trang Liên hệ và trang báo không tìm thấy */
+.contact-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 20px 0;
+  text-align: center;
+  line-height: 1.8;
+}
+.contact-page .section-shape {
+  margin-bottom: 20px;
+}
+.contact-page a {
+  color: var(--c-primary-dark);
+}

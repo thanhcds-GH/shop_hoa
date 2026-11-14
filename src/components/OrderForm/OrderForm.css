@@ -1,0 +1,52 @@
+.order-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fffafb; /* Màu hồng cực nhẹ */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #ffe1e9;
+}
+
+.order-form-container h3 {
+    color: #d81b60; /* Màu hồng đậm đặc trưng */
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box; /* Quan trọng để không bị tràn khung */
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #f50057;
+}

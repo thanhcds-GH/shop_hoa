@@ -1,0 +1,75 @@
+
+.product-container {
+  width: 100%;
+  max-width: 100vw; /* Chiếm trọn chiều ngang màn hình */
+  padding: 20px 4%; /* Padding nhẹ để không dính sát mép */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+/* Khung bao quanh toàn bộ danh sách sản phẩm */
+.product-grid {
+    display: grid;
+    /* Chia làm 5 cột bằng nhau thay vì 4 như hiện tại */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+    padding: 20px 0;
+    width: 100%; /* Đảm bảo grid chiếm hết chiều ngang */
+}
+
+/* Điều chỉnh lại kích thước từng thẻ sản phẩm để phù hợp với 5 cột */
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%; /* Đảm bảo thẻ co giãn theo cột của grid */
+}
+
+/* Đảm bảo ảnh sản phẩm không bị méo khi thu nhỏ kích thước thẻ */
+.product-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Giữ ảnh luôn là hình vuông */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 40px auto;
+  width: 90%;
+}
+
+/* Responsive cho máy tính bảng và điện thoại */
+/* Mobile: 1 hoặc 2 cột */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet: 3 hoặc 4 cột */
+@media (max-width: 1024px) and (min-width: 601px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop: 5 cột như chị yêu cầu */
+@media (min-width: 1025px) {
+    .product-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
